@@ -40,19 +40,51 @@
             </div>
             <div data-role="content" data-theme="a">
                 <div style="">
-                    <img id="howCute" style="width: 288px; height: 288px" src="http://images.crestock.com/3340000-3349999/3345850-xs.jpg" />
+                    <img style="display:none;" id="largeImage" src="" />
+                    <!--<img id="howCute" style="width: 288px; height: 288px" src="http://images.crestock.com/3340000-3349999/3345850-xs.jpg" />-->
                 </div>
 				<p><a href="#one" data-role="button">back to home page</a></p>	
             </div>
         </div>
 		
         <script>
-			$(function() {
-			
-			$('.swipeme').bind('swipe', function(event) { <!-- swipe -->
-				window.location = "#two"
-			});
-			
+            var destinationType; // sets the format of returned value 
+            
+            document.addEventListener("deviceready",onDeviceReady,false);
+
+            function onDeviceReady() {
+                destinationType=navigator.camera.DestinationType;
+            }
+
+            function capturePhoto() {
+                navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+                destinationType: destinationType.DATA_URL });
+            }
+
+
+            function onPhotoDataSuccess(imageData) {
+              console.log(imageData);
+              var largeImage = document.getElementById('largeImage');
+        
+              // Unhide image elements
+              //
+              largeImage.style.display = 'block';
+        
+              // Show the captured photo
+              // The inline CSS rules are used to resize the image
+              //
+              largeImage.src = "data:image/jpeg;base64," + imageData;
+            }
+            
+            function onFail(message) {
+              alert('Failed because: ' + message);
+            }
+    
+            $(function() {
+    			$('.swipeme').bind('swipe', function(event) {
+    				//window.location = "#two"
+                    capturePhoto();
+    			});
 			});
         </script>
     </body>
