@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 function home(req, res) {
-    res.redirect('/index.html')
+    res.redirect('/index_phoneGapExample.html');
 }
 
 app.use(express.static(__dirname + '/public'));

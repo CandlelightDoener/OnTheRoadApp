@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.candlelightdoener.ontheroadapp"
+        versionCode="10" 
+        version   = "1.0.0">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>On The Road App</name>
+
+    <description>
+        Shoot photos & add text while on the road - show your trip to your buddies later.
+    </description>
+
+    <author href="https://c9.io/candlelightdoener" email="mr.boshambles@gmail.com">
+        Seb Heglmeier
+    </author>
+
+</widget>
