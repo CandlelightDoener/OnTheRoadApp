@@ -1,1 +1,13 @@
-Project setup: run "npm install"
+Trying to get into building hybrid mobile appswithout knowing
+anything about java script or developing for mobile platforms.
+
+The most important (and only) thing about this app can do is:
+* I can swipe!
+* I can use a camera
+
+Tools:
+* Cloud9-IDE (nice online js ide)
+  (Project setup on Cloud9-IDE: run "npm install")
+* jQuery mobile (click click layout)
+* Phonegap Build (packages code for different platforms).
+
